@@ -4,7 +4,14 @@ from keras.utils import pad_sequences
 from keras.datasets import imdb
 
 
-model = load_model('imdb_sentiment_model.keras')
+import os
+
+MODEL_PATH = os.path.join(
+    os.path.dirname(__file__),
+    "imdb_sentiment_model.keras"
+)
+
+model = load_model(MODEL_PATH)
 
 word_index = imdb.get_word_index()
 
